@@ -10,6 +10,8 @@
 <script>
 export default {
   name: 'Card',
-  props: ['dark']
+  props: {
+    dark: Boolean
+  }
 }
 </script>
