@@ -18,6 +18,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Obst Digital',
+  siteUrl: 'https://www.obst.digital',
   plugins: [],
   chainWebpack (config) {
     // Load variables for all vue-files
