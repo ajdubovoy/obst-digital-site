@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header">
-      <Navbar />
+      <Navbar :dark=true />
     </header>
     <main>
       <slot/>
