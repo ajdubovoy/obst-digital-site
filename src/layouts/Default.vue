@@ -1,25 +1,23 @@
 <template>
   <div class="layout">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
-      </nav>
+      <Navbar />
     </header>
-    <slot/>
+    <main>
+      <slot/>
+    </main>
   </div>
 </template>
 
-<static-query>
-query {
-  metaData {
-    siteName
+<script>
+import Navbar from '~/components/Navbar.vue'
+
+export default {
+  components: {
+    Navbar
   }
 }
-</static-query>
+</script>
 
 <style lang='scss'>
 body {
@@ -42,9 +40,5 @@ body {
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
 }
 </style>
