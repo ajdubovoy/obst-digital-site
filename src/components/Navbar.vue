@@ -34,8 +34,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
   & > *{
     display: block;
+    z-index: 1000;
   }
 }
 .logo{
