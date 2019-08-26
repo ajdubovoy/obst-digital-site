@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header">
-      <Navbar :dark=true />
+      <Navbar :dark=dark />
     </header>
     <main>
       <slot/>
@@ -15,6 +15,7 @@ import Navbar from '~/components/Navbar.vue'
 export default {
   components: {
     Navbar
-  }
+  },
+  props: ["dark"]
 }
 </script>

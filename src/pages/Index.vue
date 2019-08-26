@@ -1,23 +1,20 @@
 <template>
-  <Layout>
-   
-    <h4>Design & Development Studio</h4>
-    <h1>We help you build brands, websites, and digital products.</h1>
-   
-    <p>
-      We are a collective of creative professionals brought together by our passion for technology and desire to build better digital products.
-    </p>
-
+  <Layout :dark='false'>
+    <Banner>
+      <h1>Build what matters.</h1>
+    </Banner>
   </Layout>
 </template>
 
 <script>
+import Banner from '~/components/Banner';
+
 export default {
   metaInfo: {
     title: 'Home'
+  },
+  components: {
+    Banner
   }
 }
 </script>
-
-<style lang="scss">
-</style>
