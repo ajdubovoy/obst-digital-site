@@ -1,13 +1,13 @@
 <template>
   <div class="banner">
     <slot />
-    <a v-if=button class="banner-button" href="#main-content">{{ button }}</a>
+    <a v-if=button class="banner-button" :href="`\#${target}`">{{ button }}</a>
   </div>
 </template>
 <script>
 export default {
   name: 'Banner',
-  props: ['button']
+  props: ['button', 'target']
 }
 </script>
 
@@ -24,7 +24,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem;
   box-shadow: inset $shadow-dark;
 }
 .banner-button{
