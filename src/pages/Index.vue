@@ -1,23 +1,29 @@
 <template>
-  <Layout>
-   
-    <h4>Design & Development Studio</h4>
-    <h1>We help you build brands, websites, and digital products.</h1>
-   
-    <p>
-      We are a collective of creative professionals brought together by our passion for technology and desire to build better digital products.
-    </p>
-
+  <Layout :dark='false'>
+    <Banner button='See Projects' target='content'>
+      <h1>Build what matters.</h1>
+    </Banner>
+    <Container id='content'>
+      <div class="text-center" id="lead-text">
+        <h4>
+          We are a design & development studio that helps you build brands, websites, and digital products.
+        </h4>
+      </div>
+    </Container>
   </Layout>
 </template>
 
 <script>
+import Banner from '~/components/Banner';
+import Container from '~/components/Container';
+
 export default {
   metaInfo: {
     title: 'Home'
+  },
+  components: {
+    Banner,
+    Container
   }
 }
 </script>
-
-<style lang="scss">
-</style>
