@@ -1,20 +1,25 @@
 $black: #333333;
+$dark-grey: #5D5D5D;
+$light-gray: #B3B3B3;
 $blue: #182E3D;
 $red: #FB5356;
 $yellow: #F5CB5C;
 $green: #71BF5D;
 $white: white;
 
+$names: black dark-grey light-gray blue red yellow green white;
+
 @mixin colors($colors...) {
   @for $i from 0 to length($colors) {
+    $name: nth($names, $i + 1);
     $color: nth($colors, $i + 1);
-    .c-#{$color}, .color-#{color} {
+    .c-#{$name}, .color-#{$name} {
       color: $color !important;
     }
-    .bg-#{$color}, .background-#{color} {
+    .bg-#{$name}, .background-#{$name} {
       background-color: $color !important;
     }
   }
 }
 
-@include colors($black, $blue, $red, $yellow, $green, $white);
+@include colors($black, $dark-grey, $light-gray, $blue, $red, $yellow, $green, $white);
