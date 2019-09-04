@@ -5,7 +5,7 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "predeploy": "gridsome build && echo 'obst.digital' > ./build/CNAME",
+    "predeploy": "gridsome build && echo 'obst.digital' > ./dist/CNAME",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
