@@ -1,8 +1,8 @@
 <template>
   <nav class="nav">
     <g-link to="/">
-      <LogoDark v-if=dark alt="Obst Digital" class="logo" />
-      <LogoLight v-if=!dark alt="Obst Digital" class="logo" />
+      <g-image v-if=dark src="~/assets/images/logo_dark.svg" alt="Obst Digital" />
+      <g-image v-if=!dark src="~/assets/images/logo_light.svg" alt="Obst Digital" />
     </g-link>
     <a href="#">
       <MenuIcon v-bind:class="[dark ? 'f-dark' : 'f-white', 'menu-icon']" />
@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import LogoDark from '~/assets/images/logo_dark.svg';
-import LogoLight from '~/assets/images/logo_light.svg';
 import MenuIcon from '~/assets/images/menu_icon.svg'
 export default {
   name: 'Card',
@@ -20,8 +18,6 @@ export default {
     dark: Boolean
   },
   components: {
-    LogoDark,
-    LogoLight,
     MenuIcon
   }
 }

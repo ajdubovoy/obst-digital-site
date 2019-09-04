@@ -28,6 +28,8 @@ export default {
   box-shadow: inset $shadow-dark;
 }
 .banner-button{
+  z-index: 1;
+  overflow: hidden;
   display: block;
   position: absolute;
   bottom: -1.5rem;
@@ -41,15 +43,34 @@ export default {
   font-weight: 200;
   text-transform: uppercase;
   @extend .shadow-box-light;
-  transition: box-shadow 250ms ease-out, background-color 250ms ease-out;
+  transition: box-shadow 500ms ease-out-in-out, background-color 500ms ease-in-out, color 500ms ease-in-out;
   &:hover{
     @extend .shadow-box-dark;
-    background-color: darken( $red, 10% );
+    &::before {
+      transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+    }
   }
   &:active{
     @extend .shadow-box-dark;
-    background-color: darken( $red, 25% );
     color: darken( white, 10% );
+    &::before {
+      transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+      background-color: darken( $red, 30% );
+    }
+  }
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: darken( $red, 15% );
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 500ms ease-in-out, background-color 250ms ease-in-out;
   }
 }
 </style>
