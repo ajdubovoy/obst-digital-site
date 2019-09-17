@@ -17,10 +17,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center; // Vertical centering
-  min-height: 75vh;
-  padding: 1.5rem;
+  min-height: $banner-height;
+  padding: $stack-space;
+  padding-top: $nav-height; // Center under nav height
   margin-top: calc(-1 * #{$nav-height});
-  margin-bottom: 4.5rem;
+  margin-bottom: $stack-space;
   position: relative;
   font-size: 2.5em;
   text-align: center;
@@ -29,8 +30,8 @@ export default {
   @extend .shadow-text-light;
   box-shadow: inset $shadow-dark;
   & > * {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: $stack-space;
+    margin-bottom: $stack-space;
   }
   & > :first-child:not(h1) {
     margin-top: 0;
@@ -48,7 +49,7 @@ export default {
   overflow: hidden;
   display: block;
   position: absolute;
-  bottom: -1.5rem;
+  bottom: -$stack-space;
   font-size: 1.5rem;
   background-color: $red;
   padding: 0.5rem 2rem;
