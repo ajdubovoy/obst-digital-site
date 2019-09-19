@@ -12,7 +12,8 @@ export default {
 
 <style lang="scss">
 .container{
-  max-width: 60ch;
+  max-width: $container-min-width;
+  min-width: $container-max-width;
   margin: 0 auto;
 }
 </style>

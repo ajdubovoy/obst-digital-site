@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
 .nav{
   width: 100vw;
+  min-height: $nav-height;
   padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
