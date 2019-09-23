@@ -1,10 +1,9 @@
 <template>
   <div class="banner">
-    <g-image class="top-fruit" src="~/assets/images/ne.svg" />
     <slot />
     <a v-if=button class="banner-button" :href="`\#${target}`">{{ button }}</a>
     <Badge v-if=badge >
-      <h1>LeWagon Berlin<br> Oficial Partner</h1>
+      <h1>LeWagon Berlin Oficial Partner</h1>
     </Badge>
     <Graphics />
   </div>
@@ -46,7 +45,6 @@ export default {
   position: relative;
   font-size: 2.5em;
   text-align: center;
-  background-color: $blue;
   @extend .c-white;
   @extend .shadow-text-light;
   box-shadow: inset $shadow-dark;
@@ -54,24 +52,27 @@ export default {
     margin-top: $stack-space;
     margin-bottom: $stack-space;
   }
-  & > :first-child:not(h1) {
+  & > :first-child:not(h1):not(.graphics) {
     margin-top: 0;
   }
-  & > :last-child:not(h1) {
+  & > :last-child:not(h1):not(.graphics) {
     margin-bottom: 0;
   }
   & > h1 {
     margin-top: auto;
     margin-bottom: auto;
   }
+  & *:not(.graphics) {
+    z-index: 50; // Show above blobs
+  }
 }
 
 .banner-button{
-  z-index: 1;
+  z-index: 100;
   overflow: hidden;
   display: block;
   position: absolute;
-  bottom: -$stack-space;
+  bottom: calc(-2 * #{$stack-space});
   font-size: 1.5rem;
   background-color: $red;
   padding: 0.5rem 2rem;

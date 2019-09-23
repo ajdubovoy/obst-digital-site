@@ -46,13 +46,16 @@ export default {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+  bottom: 0;
+  z-index: -1;
+  background-color: $blue;
+  margin-bottom: 0 !important;
 }
 .bgImage {
   position: absolute;
   background: url("../assets/images/b.jpg");
   background-size: cover;
   background-position: top;
-  z-index: -1;
 }
 .bgImage {
   position: absolute;

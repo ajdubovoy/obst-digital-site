@@ -3,7 +3,6 @@
     <Banner :badge="true" button='See Projects' target='content'>
       <h1>Build what matters.</h1>
     </Banner>
-    <Badge />
     <Container id='content'>
       <Stack id="content">
         <div class="text-center" id="lead-text">

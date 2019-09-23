@@ -11,11 +11,7 @@
 export default {
   name: 'IconBox',
   props: {
-    icon_url: String,
-  },
+    icon_url: String
+  }
 }
 </script>
-
-<style lang="scss">
-
-</style>

@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <g-link to="/">
-      <g-image v-if=dark src="~/assets/images/logo_light.svg" alt="Obst Digital" />
+      <g-image v-if=dark src="~/assets/images/logo_dark.svg" alt="Obst Digital" />
       <g-image v-if=!dark src="~/assets/images/logo_light.svg" alt="Obst Digital" />
     </g-link>
     <a href="#">
@@ -35,13 +35,6 @@ export default {
   & > *{
     display: block;
     z-index: 1000;
-    & > *{
-      display: block;
-      z-index: 1000;
-    }
-    img {
-      max-width: 190px;
-    }
   }
   .logo{
     height: 3rem;
@@ -49,4 +42,5 @@ export default {
   .menu-icon{
     height: 1.5rem;
   }
+}
 </style>
