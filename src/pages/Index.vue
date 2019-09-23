@@ -35,12 +35,8 @@
 <script>
 import Banner from '~/components/Banner';
 import Container from '~/components/Container';
-<<<<<<< HEAD
 import IconBox from '~/components/IconBox';
-
-=======
 import Stack from '~/components/Stack';
->>>>>>> origin
 
 export default {
   metaInfo: {
