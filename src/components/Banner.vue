@@ -1,32 +1,57 @@
 <template>
   <div class="banner">
+    <g-image class="top-fruit" src="~/assets/images/ne.svg" />
     <slot />
     <a v-if=button class="banner-button" :href="`\#${target}`">{{ button }}</a>
+    <Badge v-if=badge >
+      <h1>LeWagon Berlin<br> Oficial Partner</h1>
+    </Badge>
+    <Graphics />
   </div>
 </template>
+
+
 <script>
+import Badge from '~/components/Badge';
+import Graphics from '~/components/Graphics';
+
 export default {
   name: 'Banner',
-  props: ['button', 'target']
+  props: ['button', 'target', 'badge'],
+  components: {
+    Badge,
+    Graphics,
+  }
 }
 </script>
 
 <style lang="scss">
+.top-fruit {
+  width: 122px;
+  top: 0;
+  position: absolute;
+  z-index: 100;
+}
+
 .banner{
   min-height: 75vh;
   width: 100vw;
-  background-color: $blue;
   margin-top: -5rem;
   @extend .c-white;
   @extend .shadow-text-light;
-  font-size: 2.5em;
+  font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  font-family: $header-font;
   margin-bottom: 4.5rem;
   box-shadow: inset $shadow-dark;
+  h1 {
+    z-index: 100;
+  }
 }
+
 .banner-button{
   z-index: 1;
   overflow: hidden;
