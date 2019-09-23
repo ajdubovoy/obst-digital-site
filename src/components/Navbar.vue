@@ -36,11 +36,11 @@ export default {
     display: block;
     z-index: 1000;
   }
-}
-.logo{
-  height: 3rem;
-}
-.menu-icon{
-  height: 1.5rem;
+  .logo{
+    height: 3rem;
+  }
+  .menu-icon{
+    height: 1.5rem;
+  }
 }
 </style>

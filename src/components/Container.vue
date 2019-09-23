@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style lang="scss">
-.container{
-  max-width: $container-min-width;
-  min-width: $container-max-width;
-  margin: 0 auto;
-}
+	.container{
+	  max-width: $container-min-width;
+	  min-width: $container-max-width;
+	  margin: 0 auto;
+	}
 </style>

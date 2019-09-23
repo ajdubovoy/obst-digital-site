@@ -3,7 +3,7 @@
     <header class="header">
       <Navbar :dark=dark />
     </header>
-    <main>
+    <main class="main">
       <slot/>
     </main>
   </div>
@@ -19,3 +19,9 @@ export default {
   props: ["dark"]
 }
 </script>
+
+<style lang="scss">
+.main{
+  padding-bottom: $stack-space;
+}
+</style>
