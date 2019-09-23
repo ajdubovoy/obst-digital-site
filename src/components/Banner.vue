@@ -63,23 +63,25 @@ export default {
   }
   &.with-bottom{
     margin-bottom: calc(4.5 * #{$stack-space});
+    padding-bottom: calc(4.5 * #{$stack-space});
   }
 }
 
 .banner-bottom{
   position: absolute;
   bottom: 0;
-  transform: translateY(63%);
+  transform: translateY(50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
   width: 100vw;
-  margin-bottom: $stack-space;
+  margin: 0 !important;
   & > *:not(.banner-bottom-left){
-    flex-basis: $badge-max-width;
-    margin: calc(.5 * #{$stack-space});
+    flex-basis: $column-width;
+    margin-top: calc(.5 * #{$stack-space});
+    margin-bottom: calc(.5 * #{$stack-space});
   }
   & > *{
     display: flex;
