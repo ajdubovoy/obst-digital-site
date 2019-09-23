@@ -10,24 +10,19 @@
             We are a design & development studio that helps you build brands, websites, and digital products.
           </h4>
         </div>
+        <Panel>
+          <Stack>
+            <Switcher>
+              <IconBox>
+                <g-image src="~/assets/images/web_development_icon.svg" />
+                <h4>Web Development</h4>
+                <p>We use the latest technologies to build sustainable code.</p>
+              </IconBox>
+            </Switcher>
+          </Stack>
+        </Panel>
       </Stack>
     </Container>
-    <Container id="intro-icons">
-      <div class="row-icons">
-        <IconBox :icon_url="'webevelopment'">
-          <h1>Web Development</h1>
-          <p>Some subtitle that tells <br>us somethign cool.</p>
-        </IconBox>
-        <IconBox :icon_url="'design'">
-          <h1>This is the Title</h1>
-          <p>Some subtitle that tells <br>us somethign cool.</p>
-        </IconBox>
-        <IconBox :icon_url="'design'">
-          <h1>This is the Title</h1>
-          <p>Some subtitle that tells <br>us somethign cool.</p>
-        </IconBox>
-      </div>
-    </Container>  
   </Layout>
 </template>
 
@@ -36,6 +31,8 @@ import Banner from '~/components/Banner';
 import Container from '~/components/Container';
 import IconBox from '~/components/IconBox';
 import Stack from '~/components/Stack';
+import Panel from '~/components/Panel';
+import Switcher from '~/components/Switcher';
 
 export default {
   metaInfo: {
@@ -46,33 +43,16 @@ export default {
     Container,
     IconBox,
     Stack,
+    Panel,
+    Switcher
   }
 }
 </script>
 
 <style lang="scss">
-  #lead-text {
-    max-width: 600px;
-    margin: auto;
-  }
-  .icon-box {
-    width: 33.3%;
-    h1 {
-      font-family: $header-font;
-      font-size: 25px;
-      color: $blue;
-    }
-  }
-  #intro-icons {
-    width: 90%;
-  }
-  .row-icons {
-    display: flex;
-    background: white;
-    border-radius: 5px;
-    padding: 64px 11px;
-    text-align: center;
-    box-shadow: 1px 1px 32px #172e3d3d;
-    border: solid 3px #172e3d1f;
-  }
+#lead-text {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

@@ -26,7 +26,7 @@ export default {
   height: auto;
   margin: 0 1.5rem;
   background: $white;
-  border-radius: 4px;
+  border-radius: $border-radius;
   @extend .shadow-box-dark;
   & > * {
   	font-family: $main-font;
