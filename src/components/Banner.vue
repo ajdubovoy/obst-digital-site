@@ -75,13 +75,15 @@ export default {
 }
 
 .banner-bottom{
+  position: absolute;
+  bottom: 0;
+  transform: translateY(63%);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
   width: 100vw;
-  transform: translateY(75%);
   margin-bottom: $stack-space;
   & > *:not(.banner-bottom-left){
     flex-basis: $badge-max-width;
