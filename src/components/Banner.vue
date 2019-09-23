@@ -81,25 +81,27 @@ export default {
   align-items: center;
   z-index: 100;
   width: 100vw;
-  transform: translateY(85%);
+  transform: translateY(75%);
   margin-bottom: $stack-space;
   & > *:not(.banner-bottom-left){
+    flex-basis: $badge-max-width;
     margin: calc(.5 * #{$stack-space});
   }
-  .banner-bottom-left{
-    // Invisible element to center
-    width: 100%;
-    height: 0;
-    max-width: $badge-max-width;
+  & > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .banner-bottom-center{
     flex-grow: 1;
-    display: flex;
-    justify-content: center
   }
-  .banner-bottom-right{
-    display: flex;
-    justify-content: center;
+  .banner-bottom-left{
+    // Invisible element to center
+    flex-basis: 0;
+    flex-grow: 1;
+    width: 100%;
+    max-width: $badge-max-width;
+    height: 0;
   }
 }
 
