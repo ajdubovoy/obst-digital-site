@@ -5,11 +5,13 @@
     </Banner>
     <Badge />
     <Container id='content'>
-      <div class="text-center" id="lead-text">
-        <h4>
-          We are a design & development studio that helps you build brands, websites, and digital products.
-        </h4>
-      </div>
+      <Stack id="content">
+        <div class="text-center" id="lead-text">
+          <h4>
+            We are a design & development studio that helps you build brands, websites, and digital products.
+          </h4>
+        </div>
+      </Stack>
     </Container>
     <Container id="intro-icons">
       <div class="row-icons">
@@ -33,8 +35,12 @@
 <script>
 import Banner from '~/components/Banner';
 import Container from '~/components/Container';
+<<<<<<< HEAD
 import IconBox from '~/components/IconBox';
 
+=======
+import Stack from '~/components/Stack';
+>>>>>>> origin
 
 export default {
   metaInfo: {
@@ -44,6 +50,7 @@ export default {
     Banner,
     Container,
     IconBox,
+    Stack,
   }
 }
 </script>

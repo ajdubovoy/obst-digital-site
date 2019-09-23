@@ -34,21 +34,35 @@ export default {
 }
 
 .banner{
-  min-height: 75vh;
-  width: 100vw;
-  margin-top: -5rem;
+  // https://every-layout.dev/layouts/cover/
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Vertical centering
+  min-height: $banner-height;
+  padding: $stack-space;
+  padding-top: $nav-height; // Center under nav height
+  margin-top: calc(-1 * #{$nav-height});
+  margin-bottom: $stack-space;
+  position: relative;
+  font-size: 2.5em;
+  text-align: center;
+  background-color: $blue;
   @extend .c-white;
   @extend .shadow-text-light;
-  font-size: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-family: $header-font;
-  margin-bottom: 4.5rem;
   box-shadow: inset $shadow-dark;
-  h1 {
-    z-index: 100;
+  & > * {
+    margin-top: $stack-space;
+    margin-bottom: $stack-space;
+  }
+  & > :first-child:not(h1) {
+    margin-top: 0;
+  }
+  & > :last-child:not(h1) {
+    margin-bottom: 0;
+  }
+  & > h1 {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -57,7 +71,7 @@ export default {
   overflow: hidden;
   display: block;
   position: absolute;
-  bottom: -1.5rem;
+  bottom: -$stack-space;
   font-size: 1.5rem;
   background-color: $red;
   padding: 0.5rem 2rem;

@@ -24,12 +24,16 @@ export default {
 </script>
 
 <style lang="scss">
-  .nav{
-    width: 100vw;
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav{
+  width: 100vw;
+  min-height: $nav-height;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  & > *{
+    display: block;
     z-index: 1000;
     & > *{
       display: block;
