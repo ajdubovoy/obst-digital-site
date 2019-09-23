@@ -1,7 +1,7 @@
 <template>
 	<div class="badge">
 		<g-image class="badge-logo" src="~/assets/images/lewagon.png"/>
-    <h1>Le Wagon Berlin Official Partner</h1>
+    <h4>Le Wagon Berlin Official Partner</h4>
 	</div>
 </template>
 

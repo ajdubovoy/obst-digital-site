@@ -24,17 +24,6 @@
             </Switcher>
           </Stack>
         </Panel>
-        <Panel>
-          <Stack>
-            <Switcher>
-              <IconBox>
-                <g-image src="~/assets/images/web_development_icon.svg" />
-                <h4>Web Development</h4>
-                <p>We use the latest technologies to build sustainable code.</p>
-              </IconBox>
-            </Switcher>
-          </Stack>
-        </Panel>
       </Stack>
     </Container>
   </Layout>
