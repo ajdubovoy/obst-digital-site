@@ -1,7 +1,10 @@
 <template>
-  <Layout :dark='false'>
+  <Layout :dark=false :topfruit=true>
     <Banner :badge="true" button='See Projects' target='main-content'>
-      <h1>Build what matters.</h1>
+    <h1> 
+      <span class="title">Obst Digital</span>
+      <span>Build what matters.</span>
+    </h1>
     </Banner>
     <Container id='main-content'>
       <Stack id="content">

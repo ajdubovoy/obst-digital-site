@@ -30,13 +30,6 @@ export default {
 </script>
 
 <style lang="scss">
-.top-fruit {
-  width: 122px;
-  top: 0;
-  position: absolute;
-  z-index: 100;
-}
-
 .banner{
   // https://every-layout.dev/layouts/cover/
   display: flex;
@@ -45,7 +38,6 @@ export default {
   min-height: $banner-height;
   padding: $stack-space;
   padding-top: $nav-height; // Center under nav height
-  margin-top: calc(-1 * #{$nav-height});
   position: relative;
   font-size: 2.5em;
   text-align: center;
@@ -71,21 +63,25 @@ export default {
   }
   &.with-bottom{
     margin-bottom: calc(4.5 * #{$stack-space});
+    padding-bottom: calc(4.5 * #{$stack-space});
   }
 }
 
 .banner-bottom{
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
   width: 100vw;
-  transform: translateY(75%);
-  margin-bottom: $stack-space;
+  margin: 0 !important;
   & > *:not(.banner-bottom-left){
-    flex-basis: $badge-max-width;
-    margin: calc(.5 * #{$stack-space});
+    flex-basis: $column-width;
+    margin-top: calc(.5 * #{$stack-space});
+    margin-bottom: calc(.5 * #{$stack-space});
   }
   & > *{
     display: flex;
