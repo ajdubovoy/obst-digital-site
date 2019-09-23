@@ -1,5 +1,5 @@
 <template>
-  <Layout :dark='false'>
+  <Layout :dark=false :topfruit=true>
     <Banner :badge="true" button='See Projects' target='main-content'>
     <h1> 
       <span class="title">Obst Digital</span>
@@ -13,6 +13,17 @@
             We are a design & development studio that helps you build brands, websites, and digital products.
           </h4>
         </div>
+        <Panel>
+          <Stack>
+            <Switcher>
+              <IconBox>
+                <g-image src="~/assets/images/web_development_icon.svg" />
+                <h4>Web Development</h4>
+                <p>We use the latest technologies to build sustainable code.</p>
+              </IconBox>
+            </Switcher>
+          </Stack>
+        </Panel>
         <Panel>
           <Stack>
             <Switcher>

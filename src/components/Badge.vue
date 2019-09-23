@@ -1,7 +1,7 @@
 <template>
 	<div class="badge">
 		<g-image class="badge-logo" src="~/assets/images/lewagon.png"/>
-    <h1>LeWagon Berlin Official Partner</h1>
+    <h1>Le Wagon Berlin Official Partner</h1>
 	</div>
 </template>
 
@@ -14,11 +14,10 @@ export default {
 <style lang="scss">
 .badge-logo {
   height: 4.875rem;
-  margin-right: $stack-space;
-  margin-left: $stack-space;
+  margin-right: 0.5rem;
 }
 .badge {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   width: auto;

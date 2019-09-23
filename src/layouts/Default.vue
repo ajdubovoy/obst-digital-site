@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header">
-      <Navbar :dark=dark />
+      <Navbar :dark=dark :topfruit=topfruit />
     </header>
     <main class="main">
       <slot/>
@@ -16,7 +16,7 @@ export default {
   components: {
     Navbar
   },
-  props: ["dark"]
+  props: ["dark", "topfruit"]
 }
 </script>
 

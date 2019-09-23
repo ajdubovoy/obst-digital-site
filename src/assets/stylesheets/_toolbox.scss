@@ -62,3 +62,15 @@ $shadow-light: 0px 1px 20px rgba(0, 0, 0, 0.06);
   display: block;
   margin: 0 !important;
 }
+
+
+// Opacity
+.o{
+  transition: opacity 500ms ease;
+  &-0{
+    opacity: 0;
+  }
+  &-1{
+    opacity: 1.0;
+  }
+}

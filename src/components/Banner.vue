@@ -30,13 +30,6 @@ export default {
 </script>
 
 <style lang="scss">
-.top-fruit {
-  width: 122px;
-  top: 0;
-  position: absolute;
-  z-index: 100;
-}
-
 .banner{
   // https://every-layout.dev/layouts/cover/
   display: flex;
@@ -45,7 +38,6 @@ export default {
   min-height: $banner-height;
   padding: $stack-space;
   padding-top: $nav-height; // Center under nav height
-  margin-top: calc(-1 * #{$nav-height});
   position: relative;
   font-size: 2.5em;
   text-align: center;
