@@ -1,10 +1,15 @@
 <template>
-  <div class="banner">
+  <div :class="`banner ${button ? 'with-bottom' : ''}`">
     <slot />
-    <a v-if=button class="banner-button" :href="`\#${target}`">{{ button }}</a>
-    <Badge v-if=badge >
-      <h1>LeWagon Berlin Oficial Partner</h1>
-    </Badge>
+    <div class="banner-bottom">
+      <div class="banner-bottom-left"></div>
+      <div class="banner-bottom-center">
+        <a v-if=button class="banner-button" :href="`\#${target}`">{{ button }}</a>
+      </div>
+      <div class="banner-bottom-right">
+        <Badge v-if=badge />
+      </div>
+    </div>
     <Graphics />
   </div>
 </template>
@@ -41,7 +46,6 @@ export default {
   padding: $stack-space;
   padding-top: $nav-height; // Center under nav height
   margin-top: calc(-1 * #{$nav-height});
-  margin-bottom: $stack-space;
   position: relative;
   font-size: 2.5em;
   text-align: center;
@@ -62,17 +66,50 @@ export default {
     margin-top: auto;
     margin-bottom: auto;
   }
-  & *:not(.graphics) {
+  & *:not(.graphics):not(.banner-bottom) {
     z-index: 50; // Show above blobs
+  }
+  &.with-bottom{
+    margin-bottom: calc(4.5 * #{$stack-space});
+  }
+}
+
+.banner-bottom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  width: 100vw;
+  transform: translateY(85%);
+  margin-bottom: $stack-space;
+  & > *:not(.banner-bottom-left){
+    margin: calc(.5 * #{$stack-space});
+  }
+  .banner-bottom-left{
+    // Invisible element to center
+    width: 100%;
+    height: 0;
+    max-width: $badge-max-width;
+  }
+  .banner-bottom-center{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center
+  }
+  .banner-bottom-right{
+    display: flex;
+    justify-content: center;
   }
 }
 
 .banner-button{
-  z-index: 100;
-  overflow: hidden;
+  width: max-content;
+  margin-right: $stack-space;
+  margin-left: $stack-space;
+  position: relative; // For button overlay to show on it
   display: block;
-  position: absolute;
-  bottom: calc(-2 * #{$stack-space});
+  overflow: hidden;
   font-size: 1.5rem;
   background-color: $red;
   padding: 0.5rem 2rem;

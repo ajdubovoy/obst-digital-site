@@ -1,7 +1,7 @@
 <template>
-	<div class="lw-badge">
-		<g-image class="logo-lw" src="~/assets/images/lewagon.png"/>
-		<slot />
+	<div class="badge">
+		<g-image class="badge-logo" src="~/assets/images/lewagon.png"/>
+    <h1>LeWagon Berlin Official Partner</h1>
 	</div>
 </template>
 
@@ -12,31 +12,28 @@ export default {
 </script>
 
 <style lang="scss">
-.logo-lw {
-  height: 78px;
-  margin-right: 22px;
+.badge-logo {
+  height: 4.875rem;
+  margin-right: $stack-space;
+  margin-left: $stack-space;
 }
-.lw-badge {
-  font-size: 12px;
-  padding: 15px;
-  margin: 25px;
+.badge {
+  padding: 1rem;
   display: flex;
-  width: 260px;
-  position: absolute;
-  height: 110px;
-  background: white;
-  z-index: 1000;
+  align-items: center;
+  width: auto;
+  max-width: $badge-max-width;
+  height: auto;
+  margin: 0 1.5rem;
+  background: $white;
   border-radius: 4px;
-  right: 0;
-  box-shadow: 1px 1px 17px #00000030;
-  bottom: -60px;
-  h1 {
+  @extend .shadow-box-dark;
+  & > * {
   	font-family: $main-font;
-    color: #000000;
-    margin-top: 14px;
+    color: $black;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
   }
   &:hover {
 

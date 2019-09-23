@@ -1,9 +1,9 @@
 <template>
   <Layout :dark='false'>
-    <Banner :badge="true" button='See Projects' target='content'>
+    <Banner :badge="true" button='See Projects' target='main-content'>
       <h1>Build what matters.</h1>
     </Banner>
-    <Container id='content'>
+    <Container id='main-content'>
       <Stack id="content">
         <div class="text-center" id="lead-text">
           <h4>
