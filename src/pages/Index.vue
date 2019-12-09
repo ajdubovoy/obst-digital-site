@@ -39,7 +39,7 @@ export default {
 
 h1 {
   color: color(white);
-  font-size: calc(3rem + 10vh);
+  font-size: calc(3rem + 10vw);
   text-transform: uppercase;
 }
 
