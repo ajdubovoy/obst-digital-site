@@ -3,35 +3,31 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const path = require('path');
+const path = require('path')
 
 function addStyleResource (rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/stylesheets/_globals.scss'),
+        path.resolve(__dirname, './src/assets/styles/*.scss'),
       ],
-    })
+    });
 }
-
 
 module.exports = {
   siteName: 'Obst Digital',
   siteUrl: 'https://www.obst.digital',
-  plugins: [],
+  plugins: [
+    'gridsome-plugin-pug'
+  ],
   chainWebpack (config) {
-    // Load variables for all vue-files
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    // Load style variables for all vue-files
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
 
     types.forEach(type => {
-      addStyleResource(config.module.rule('sass').oneOf(type))
-    })
-
-    // or if you use scss
-    types.forEach(type => {
-      addStyleResource(config.module.rule('scss').oneOf(type))
-    })
+      addStyleResource(config.module.rule('scss').oneOf(type));
+    });
 
     // SVG
     const svgRule = config.module.rule('svg');

@@ -1,0 +1,49 @@
+$colors: (
+  brand: #17E5C5, // for most highlights/accents and also for available spaces
+  dark: #070707, // for highlighted text
+  light: #999999, // for unhighlighted text
+  white: white, // for background on panels
+  yellow: #FFCE29, // for tours
+  blue: #1AA6C0, // for links
+  gray: #707070, // for reserved spaces
+  red: #FF7272, // for close buttons, etc.
+  background: #F3F3F4 // for body background
+);
+
+@function color($key) {
+  // Create a `color` function to easily get any color value, i.e, `color(brand)`
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@each $name, $color in $colors {
+  // Create foreground and background utility classes automatically for every color
+ .color\:#{"" + $name}, .c\:#{"" + $name} {
+   color: $color !important;
+  }
+
+  .background\:#{"" + $name}, .bg\:#{"" + $name} {
+    background-color: $color !important;
+  }
+
+  .fill\:#{"" + $name}, .f\:#{"" + $name} {
+    // Creates a 50% opacity fill of the specified color—good for overlays on map
+    fill: $color !important;
+  }
+
+  .fill\:#{"" + $name}\:light, .f\:#{"" + $name}\:l, .f\:#{"" + $name}\:light{
+    // Creates a 50% opacity fill of the specified color—good for overlays on map
+    fill: rgba($color, 0.5) !important;
+  }
+}
+
+// Use `"" + $name` to prevent "did you mean to interpolate" SCSS error message
+
+body {
+  color: color(dark);
+  background-color: color(background);
+}
