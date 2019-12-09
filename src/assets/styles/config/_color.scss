@@ -1,13 +1,12 @@
 $colors: (
-  brand: #17E5C5, // for most highlights/accents and also for available spaces
-  dark: #070707, // for highlighted text
-  light: #999999, // for unhighlighted text
-  white: white, // for background on panels
-  yellow: #FFCE29, // for tours
-  blue: #1AA6C0, // for links
-  gray: #707070, // for reserved spaces
-  red: #FF7272, // for close buttons, etc.
-  background: #F3F3F4 // for body background
+  black: #333333,
+  dark: #5D5D5D,
+  light: #B3B3B3,
+  blue: #182E3D,
+  red: #FB5356,
+  yellow: #F5CB5C,
+  green: #71BF5D,
+  white: white
 );
 
 @function color($key) {
@@ -45,5 +44,5 @@ $colors: (
 
 body {
   color: color(dark);
-  background-color: color(background);
+  background-color: color(white);
 }

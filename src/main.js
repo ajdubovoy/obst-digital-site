@@ -2,6 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import { upperFirst, kebabCase } from 'lodash';
+import registerLayoutComponents from './components/every_layout';
 
 import DefaultLayout from '~/layouts/Default.vue'
 import layoutComponents from '~/components/every_layout';
@@ -11,7 +12,5 @@ export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('layout', DefaultLayout);
 
-  Object.values(layoutComponents).forEach(component => {
-    Vue.component(component.name, component);
-  });
+  registerLayoutComponents();
 }

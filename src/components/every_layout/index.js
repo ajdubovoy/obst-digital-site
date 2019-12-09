@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import Box from "./Box";
 import Cluster from "./Cluster";
 import Cover from "./Cover";
@@ -6,7 +7,7 @@ import Sidebar from "./Sidebar";
 import Stack from "./Stack";
 import Switcher from "./Switcher";
 
-export default {
+const components = {
   Box,
   Cluster,
   Cover,
@@ -14,4 +15,10 @@ export default {
   Sidebar,
   Stack,
   Switcher
+}
+
+export default function() {
+  Object.values(components).forEach(component => {
+    Vue.component(component.name, component);
+  });
 }

@@ -24,14 +24,14 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   
-  /deep/ & > * {
+  & /deep/ > * {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
 @each $name, $spacing in $spacings {
-  /deep/ .#{$name} > * + * {
+  & /deep/#{$name} > * + * {
     margin-top: $spacing;
   }
 }

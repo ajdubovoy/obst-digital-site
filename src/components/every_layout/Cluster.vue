@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .cluster {
   overflow: hidden;
-  /deep/ & > * {
+  & /deep/ > * {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -28,9 +28,9 @@ export default {
 
 @each $name, $spacing in $spacings {
   .#{$name} {
-    /deep/ & > * {
+    & /deep/ > * {
       margin: $spacing / 2 * -1;
-      /deep/ & > * {
+      & /deep/ > * {
         margin: $spacing / 2;
       }
       

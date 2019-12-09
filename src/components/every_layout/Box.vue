@@ -24,7 +24,7 @@ export default {
   color: color(dark);
   background-color: color(background);
 
-  /deep/ & * {
+  & /deep/ * {
     color: inherit;
   }
 }
