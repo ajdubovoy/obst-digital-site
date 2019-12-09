@@ -1,8 +1,10 @@
 <template lang="pug">
   layout
     l-cover#banner
-      .color
-      .color
+      transition(name="slide" appear)
+        .color
+      transition(name="slide" appear)
+        .color
       transition(name="fade" appear)
         h1 
           #logo
@@ -10,14 +12,15 @@
           span(class="highlight")
             | Making
           |  is at our Core
-      p
-        a(
-        href="mailto:contact@obst.digital"
-        target="_blank"
-        )
-          | Contact us
-        span
-          |  to learn more
+      transition(name="fadeSlow" appear)
+        p
+          a(
+          href="mailto:contact@obst.digital"
+          target="_blank"
+          )
+            | Contact us
+          span
+            |  to learn more
 </template>
 
 <script>
@@ -42,18 +45,29 @@ h1 {
 
 p {
   font-size: 1.25em;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-spacing: 0.1em;
+  color: color(pink);
 }
 
 a, a:visited {
-  color: color(red);
+  transition: color 150ms ease;
+  color: color(yellow);
   text-decoration: none;
+  &:hover {
+    color: color(green);
+  }
+  &:active {
+    color: darken(color(green), 20%);
+  }
 }
 
 .highlight {
   text-decoration: underline;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.15em;
-  text-decoration-color: color(blue);
+  text-decoration-color: color(yellow);
 }
 
 .color {
@@ -64,11 +78,11 @@ a, a:visited {
   left: 0;
   margin: 0;
   &:first-child {
-    background-color: color(red);
+    background-color: color(pink);
     top: 0;
   }
   &:nth-child(2){
-    background-color: color(yellow);
+    background-color: color(red);
     top: 50%;
   }
 }
@@ -81,5 +95,23 @@ a, a:visited {
 .fade-enter, .fade-leave-to {
   opacity: 0;
   transform: translateX(-50%);
+}
+
+.fadeSlow-enter-active, .fade-slow-leave-active {
+  $duration: 2000ms;
+  $delay: 500ms;
+  transition: opacity $duration ease $delay;
+}
+.fadeSlow-enter, .fade-slow-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+  $duration: 500ms;
+  transition: opacity $duration ease, height $duration ease;
+}
+.slide-enter, .slide-leave-to {
+  opacity: 0;
+  height: 0;
 }
 </style>
