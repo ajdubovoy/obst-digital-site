@@ -1,10 +1,6 @@
 <template lang="pug">
 div(
-:class=`{ 
-  'with-sidebar': true, 
-  right: reversed,
-  left: !reversed
-}`
+  :class="['sidebar', reversed ? 'right' : 'left']"
 )
   slot
 </template>
@@ -13,30 +9,24 @@ div(
 export default {
   name: 'l-sidebar',
   props: {
-    reversed: {
-      type: Boolean,
-      default: false
-    }
+    reversed: Boolean
   }
 }
 </script>
 
 <style lang="scss">
-.with-sidebar {
+.sidebar {
   overflow: hidden;
-
   & > * {
     display: flex;
     flex-wrap: wrap;
     margin: spacing(sm) / 2 * -1;
     overflow: hidden;
   }
-
   & > * > * {
     margin: spacing(sm) / 2;
     flex-grow: 1;
   }
-
   &.right {
     flex-wrap: wrap-reverse;
     & > * > :first-child {
@@ -45,7 +35,6 @@ export default {
       min-width: calc(35% - #{spacing(sm)});
     }
   }
-
   &.left {
     & > * > :last-child {
       flex-basis: 0;

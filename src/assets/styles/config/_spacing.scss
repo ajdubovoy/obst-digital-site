@@ -6,6 +6,8 @@ $spacings: (
   xl: 6rem
 );
 
+
+
 @function spacing($key) {
   // Create a `spacing` function to easily get any spacing value, i.e, `spacing(brand)`
   @if map-has-key($spacings, $key) {
