@@ -5,6 +5,8 @@
         .color.top
       transition(name="slide" appear)
         .color.btm
+      transition(name="slide" appear)
+        g-image.apple(src="~/assets/images/waves.svg")
       transition(name="fade" appear)
         h1
           #logo
@@ -53,10 +55,15 @@ export default {
 
 <style lang="scss" scoped>
 .apple {
+  width: 45vw;
+  min-width: 350px;
   position: absolute;
-  right: -3px;
-  top: 205px;
-  right: 0px;
+  transition: ease all 1s;
+  bottom: -10px;
+  right: 10px;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .left {
   background-color: color(blue);
