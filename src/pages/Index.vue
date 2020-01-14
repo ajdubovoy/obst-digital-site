@@ -2,25 +2,46 @@
   layout
     l-cover#banner
       transition(name="slide" appear)
-        .color
+        .color.top
       transition(name="slide" appear)
-        .color
+        .color.btm
+      transition(name="slide" appear)
+        g-image.apple(src="~/assets/images/waves.svg")
       transition(name="fade" appear)
-        h1 
+        h1
           #logo
-            g-image(src="~/assets/images/logo_light.svg")
-          span(class="highlight")
-            | Making
-          |  is at our Core
-      transition(name="fadeSlow" appear)
-        p
-          a(
-          href="mailto:contact@obst.digital"
-          target="_blank"
-          )
-            | Contact us
-          span
-            |  to learn more
+            g-image(src="~/assets/images/logo3.svg")
+          .text-content
+            span(class="highlight")
+              | Making <br>
+            | is at our Core
+            p
+              a(
+              href="mailto:contact@obst.digital"
+              target="_blank"
+              )
+                | Contact us
+              span
+                |  to learn more.
+    transition(name="" appear)
+      l-sidebar
+        div.sidebar
+          div.half#left
+            a(href="https://www.betahaus.com/magazine/people-in-beta-obst-digital"
+            target="_blank")
+              div.overlay
+              h1
+                p.highlight IN THE PRESS:
+                | People In Beta
+                p People in beta #6: Obst Digital <br> Not-Your-Typical Full-Stack Developers
+          div.half#right
+            a(href="/projects"
+            target="_blank")
+              div.overlay
+              h1
+                p.highlight CASE STUDY:
+                | Artyque Platform
+                p Building a digital agency and platform for Emerging artists.
 </template>
 
 <script>
@@ -33,14 +54,107 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#banner {
+.apple {
+  width: 45vw;
+  min-width: 350px;
   position: absolute;
+  transition: ease all 1s;
+  bottom: -10px;
+  right: 10px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.left {
+  background-color: color(blue);
+}
+#banner {
+  // position: absolute;
+   p {
+    font-size: 1.8rem;
+    text-align: left;
+    color: color(white);
+    font-weight: 100;
+
+  }
+}
+
+.overlay {
+  z-index: 0;
+  transition: ease opacity 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: color(blue);
+  opacity: 0.1;
+}
+
+.half {
+  position: relative;
+  height: 470px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  h1 {
+    z-index: 10;
+    transition: ease all 1s;
+    font-size: 50px;
+    text-align: center;
+    opacity: 0;
+  }
+  p {
+    font-size: 15px;
+    text-align: center;
+    color: color(white);
+  }
+  .highlight {
+    max-width: 150px;
+    background-color: transparent;
+    border: solid 1px color(yellow);
+    margin: auto;
+    padding: 6px;
+  }
+
+  &:hover {
+    h1 {
+      opacity: 1;
+    }
+    .overlay {
+      opacity: .6;
+    }
+  }
+}
+
+#left {
+  transition: ease all 1s;
+  background: url("../assets/images/cover.jpg"),;
+  background-position: center;
+  background-size: cover;
+  min-width: 50%;
+  background-color: blue;
+  &:hover {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+#right {
+  background: url("../assets/images/artyque.png");
+  background-position: center;
+  background-size: cover;
 }
 
 h1 {
+  font-weight: 400;
+  text-transform: capitalize;
   color: color(white);
-  font-size: calc(3rem + 10vw);
-  text-transform: uppercase;
+  margin: 0 30px;
+  font-size: calc(2rem + 6vw);
 }
 
 p {
@@ -64,26 +178,49 @@ a, a:visited {
 }
 
 .highlight {
-  text-decoration: underline;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.15em;
   text-decoration-color: color(yellow);
+  background: #F5CB5C;
+  border-radius: 4px;
+  color: #efac00;
+  padding: 0em .3em;
+}
+
+
+
+#logo {
+    display: flex;
+    margin-bottom: 124px;
+    img {
+      max-width: 220px;
+    }
 }
 
 .color {
   position: absolute;
   z-index: z(background);
   width: 100vw;
-  height: 50%;
   left: 0;
   margin: 0;
+  &.top {
+    height: 30%;
+  }
+  &.btm {
+    height: 80%;
+  }
+
+  //"../assets/images/bg.jpg"
   &:first-child {
-    background-color: color(pink);
+    background: #f5f5f5;
     top: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   &:nth-child(2){
-    background-color: color(red);
-    top: 50%;
+    background: linear-gradient(#182e3d, #22455d);
+    top: 30%;
   }
 }
 
