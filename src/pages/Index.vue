@@ -59,8 +59,12 @@ export default {
   min-width: 350px;
   position: absolute;
   transition: ease all 1s;
-  bottom: -10px;
-  right: 10px;
+  bottom: -2vh;
+  right: 2vw;
+  z-index: z(background);
+  @media only screen and (max-width: 650px) {
+    opacity: 0.5;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -207,7 +211,7 @@ a, a:visited {
     height: 30%;
   }
   &.btm {
-    height: 80%;
+    height: 100%;
   }
 
   //"../assets/images/bg.jpg"
